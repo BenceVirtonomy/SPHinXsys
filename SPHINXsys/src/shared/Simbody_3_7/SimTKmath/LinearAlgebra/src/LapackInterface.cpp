@@ -139,7 +139,7 @@ template <> void LapackInterface::gelss<std::complex<double> >( int m, int n,  i
 template <> void LapackInterface::potrs<double>
     ( char uplo, const int ncol, const int nrhs, const double *lu,  double *b ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::potrs called"));
 #elif WASM_BUILD
     int info;
 
@@ -156,7 +156,7 @@ template <> void LapackInterface::potrs<double>
 template <> void LapackInterface::potrs<float>
     ( char uplo, const int ncol, const int nrhs, const float *lu,  float *b ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::potrs called"));
 #elif WASM_BUILD
     int info;
 
@@ -173,7 +173,7 @@ template <> void LapackInterface::potrs<float>
 template <> void LapackInterface::potrs<std::complex<float> >
     ( char uplo, const int ncol, const int nrhs, const std::complex<float>* lu,  std::complex<float>* b ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::potrs called"));
 #elif WASM_BUILD
     int info;
 
@@ -190,7 +190,7 @@ template <> void LapackInterface::potrs<std::complex<float> >
 template <> void LapackInterface::potrs<std::complex<double> >
     ( char uplo, const int ncol, const int nrhs, const std::complex<double>* lu,  std::complex<double>* b ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::potrs called"));
 #elif WASM_BUILD
     int info;
 
@@ -207,7 +207,7 @@ template <> void LapackInterface::sytrs<double>
 // TODO fix SimTKlapack.h for const int* pivots    ( char trans,  const int ncol, const int nrhs, const double *lu, const int *pivots, double *b ) {
 ( char trans,  const int ncol, const int nrhs, double *lu,  int *pivots, double *b ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::sytrs called"));
 #elif WASM_BUILD
     int info;
 
@@ -225,7 +225,7 @@ template <> void LapackInterface::sytrs<float>
 // TODO    ( char trans, const int ncol, const int nrhs, const float *lu, const int *pivots, float *b ) {
     ( char trans, const int ncol, const int nrhs, float *lu, int *pivots, float *b ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::sytrs called"));
 #elif WASM_BUILD
     int info;
 
@@ -243,7 +243,7 @@ template <> void LapackInterface::sytrs<std::complex<float> >
 // TODO    ( char trans, const int ncol, const int nrhs, const std::complex<float>* lu, const int *pivots, std::complex<float>* b ) {
     ( char trans, const int ncol, const int nrhs, std::complex<float>* lu, int *pivots, std::complex<float>* b ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::sytrs called"));
 #elif WASM_BUILD
     int info;
 
@@ -262,7 +262,7 @@ template <> void LapackInterface::sytrs<std::complex<double> >
 // TODO    ( char trans, const int ncol, const int nrhs, const std::complex<double>* lu, const int *pivots, std::complex<double>* b ) {
     ( char trans, const int ncol, const int nrhs, std::complex<double>* lu, int *pivots, std::complex<double>* b ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::sytrs called"));
 #elif WASM_BUILD
     int info;
 
@@ -279,7 +279,7 @@ template <> void LapackInterface::sytrs<std::complex<double> >
 template <> void LapackInterface::getrs<double>
     ( char trans, const int ncol, const int nrhs, const double *lu, const int *pivots, double *b ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::getrs called"));
 #elif WASM_BUILD
     int info;
 
@@ -297,7 +297,7 @@ template <> void LapackInterface::getrs<double>
 template <> void LapackInterface::getrs<float>
     ( char trans , const int ncol, const int nrhs, const float *lu, const int *pivots, float *b ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::getrs called"));
 #elif WASM_BUILD
     int info;
 
@@ -314,7 +314,7 @@ template <> void LapackInterface::getrs<float>
 template <> void LapackInterface::getrs<complex<float> >
     ( char trans, const int ncol, const int nrhs, const std::complex<float> *lu, const int *pivots, complex<float> *b ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::getrs called"));
 #elif WASM_BUILD
     int info;
 
@@ -330,7 +330,7 @@ template <> void LapackInterface::getrs<complex<float> >
 template <> void LapackInterface::getrs<complex<double> >
     ( char trans, const int ncol, const int nrhs, const complex<double> *lu, const int *pivots, complex<double> *b ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::getrs called"));
 #elif WASM_BUILD
     int info;
 
@@ -356,7 +356,7 @@ template <> void LapackInterface::syevx<float>( char jobz, char range,
     int iu,   float abstol, int& nFound, float *values, float* vectors, 
     int LDVectors, int* ifail, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::syevx called"));
 #elif WASM_BUILD
     TypedWorkSpace<int> iwork(5*n);
     float wsize[1];
@@ -383,7 +383,7 @@ template <> void LapackInterface::syevx<double>( char jobz, char range,
     int iu,   double abstol, int& nFound, double *values, double* vectors, 
     int LDVectors, int* ifail, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::syevx called"));
 #elif WASM_BUILD    
     TypedWorkSpace<int> iwork(5*n);
     double wsize[1];
@@ -410,7 +410,7 @@ template <> void LapackInterface::syevx<std::complex<double> >( char jobz,
     double vu, int il, int iu,   double abstol, int& nFound, double *values, 
     std::complex<double>* vectors, int LDVectors, int* ifail, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::syevx called"));
 #elif WASM_BUILD    
     TypedWorkSpace<int> iwork(5*n);
     TypedWorkSpace<double> rwork( 7*n );
@@ -438,7 +438,7 @@ template <> void LapackInterface::syevx<std::complex<float> >( char jobz,
     float vu, int il, int iu,   float abstol, int& nFound, float *values, 
     std::complex<float>* vectors, int LDVectors, int* ifail, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::syevx called"));
 #elif WASM_BUILD      
     TypedWorkSpace<int> iwork(5*n);
     TypedWorkSpace<float> rwork( 7*n );
@@ -470,7 +470,7 @@ void LapackInterface::syev( char jobz,  char uplo, int n,
 template <> void LapackInterface::syev<float>( char jobz,  char uplo, int n, 
     float* a, int lda, float* eigenValues, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::syev called"));
 #elif WASM_BUILD
     float wsize[1];
     ssyev_( jobz, uplo, n, a, lda, eigenValues, wsize, -1, info,  1, 1 );
@@ -487,7 +487,7 @@ template <> void LapackInterface::syev<float>( char jobz,  char uplo, int n,
 template <> void LapackInterface::syev<double>( char jobz,  char uplo, int n, 
     double* a, int lda, double* eigenValues, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::syev called"));
 #elif WASM_BUILD
     double wsize[1];
     dsyev_( jobz, uplo, n, a, lda, eigenValues, wsize, -1, info,  1, 1 );
@@ -504,7 +504,7 @@ template <> void LapackInterface::syev<double>( char jobz,  char uplo, int n,
 template <> void LapackInterface::syev<std::complex<float> >( char jobz,  char uplo, int n, 
     std::complex<float>* a, int lda, float* eigenValues, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::syev called"));
 #elif WASM_BUILD
     std::complex<float> wsize[1];
     int l = 3*n -2;
@@ -527,7 +527,7 @@ template <> void LapackInterface::syev<std::complex<float> >( char jobz,  char u
 template <> void LapackInterface::syev<std::complex<double> >( char jobz,  char uplo, int n, 
     std::complex<double>* a, int lda, double* eigenValues, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::syev called"));
 #elif WASM_BUILD
     std::complex<double> wsize[1];
     int l = 3*n -2;
@@ -558,7 +558,7 @@ void LapackInterface::gesdd<float>( char jobz, int m, int n, float* a, int lda,
            float* s, float* u, int ldu,  float* vt,
            int ldvt, int& info ){
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::gesdd called"));
 #elif WASM_BUILD
     int lwork;
     int mn = (m < n ) ? m : n;  // min(m,n)
@@ -580,7 +580,7 @@ void LapackInterface::gesdd<double>( char jobz, int m, int n, double* a, int lda
            double* s, double* u, int ldu,  double* vt,
            int ldvt, int& info ){
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::gesdd called"));
 #elif WASM_BUILD
     int lwork;
     int mn = (m < n ) ? m : n;  // min(m,n)
@@ -597,9 +597,7 @@ void LapackInterface::gesdd<double>( char jobz, int m, int n, double* a, int lda
     }
 #endif
 }
-#ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
-#elif WASM_BUILD
+#ifndef WASM_BUILD
 // TODO REMOVE when added to SimTKlapack.
 extern "C" {
     extern void cgesdd_(const char& jobz, const int& m, const int& n,  std::complex<float> *a, const int& lda, float *s,  std::complex<float> *u, const int& ldu,  std::complex<float> *vt, const int& ldvt,  std::complex<float> *work, const int& lwork, float *rwork, int *iwork, int& info, int jobz_len=1 );
@@ -611,7 +609,7 @@ void LapackInterface::gesdd<std::complex<float> >( char jobz, int m, int n,
       std::complex<float>* a, int lda, float* s, std::complex<float>* u, 
       int ldu,  std::complex<float>* vt, int ldvt, int& info ){
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::gesdd called"));
 #elif WASM_BUILD
     int mn = (m < n ) ? m : n;  // min(m,n)
     TypedWorkSpace<float> rwork;
@@ -641,7 +639,7 @@ void LapackInterface::gesdd<std::complex<double> >( char jobz, int m, int n,
       std::complex<double>* a, int lda, double* s, std::complex<double>* u, 
       int ldu,  std::complex<double>* vt, int ldvt, int& info ){
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::gesdd called"));
 #elif WASM_BUILD
     int mn = (m < n ) ? m : n;  // min(m,n)
     TypedWorkSpace<double> rwork;
@@ -682,7 +680,7 @@ template <> void LapackInterface::geev<double>
     int lwork, int& info )
 {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::geev called"));
 #elif WASM_BUILD
     TypedWorkSpace<double> wr(n);
     TypedWorkSpace<double> wi(n);
@@ -738,7 +736,7 @@ template <> void LapackInterface::geev<float>
     int lwork, int& info )
 {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::geev called"));
 #elif WASM_BUILD
     TypedWorkSpace<float> wr(n);
     TypedWorkSpace<float> wi(n);
@@ -790,7 +788,7 @@ template <> void LapackInterface::geev<std::complex<float> >
     int lwork, int& info )
 {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::geev called"));
 #elif WASM_BUILD
     TypedWorkSpace<float> Rwork(2*n);
     cgeev_( jobvl, jobvr, 
@@ -811,7 +809,7 @@ template <> void LapackInterface::geev<std::complex<double> >
     int lwork, int& info )
 {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::geev called"));
 #elif WASM_BUILD
     TypedWorkSpace<double> Rwork(2*n);
     zgeev_( jobvl, jobvr, 
@@ -828,7 +826,7 @@ template <> void LapackInterface::geev<std::complex<double> >
 template <> 
 void  LapackInterface::getrf<double>( const int m, const int n, double *lu, const int lda,  int *pivots, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::getrf called"));
 #elif WASM_BUILD
     dgetrf_(m, n, lu, lda, pivots, info   );
 #endif
@@ -837,7 +835,7 @@ void  LapackInterface::getrf<double>( const int m, const int n, double *lu, cons
 template <> 
 void  LapackInterface::getrf<float>( const int m, const int n, float *lu, const int lda,  int *pivots, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::getrf called"));
 #elif WASM_BUILD
     sgetrf_(m, n, lu, lda, pivots, info   );
 #endif
@@ -847,7 +845,7 @@ void  LapackInterface::getrf<float>( const int m, const int n, float *lu, const 
 template <> 
 void  LapackInterface::getrf<std::complex<double> >( const int m, const int n, std::complex<double> *lu, const int lda,  int *pivots, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::getrf called"));
 #elif WASM_BUILD
     zgetrf_(m, n, lu, lda, pivots, info   );
 
@@ -861,7 +859,7 @@ void  LapackInterface::getrf<std::complex<double> >( const int m, const int n, s
 template <> 
 void  LapackInterface::getrf<std::complex<float> >( const int m, const int n, std::complex<float> *lu, const int lda,  int *pivots, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::getrf called"));
 #elif WASM_BUILD
     cgetrf_(m, n, lu, lda, pivots, info   );
 
@@ -875,7 +873,7 @@ void  LapackInterface::getrf<std::complex<float> >( const int m, const int n, st
 template <> 
 void LapackInterface::tzrzf<double>( const int& m, const int& n,  double* a, const int& lda, double* tau, double* work, const int& lwork, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::tzrzf called"));
 #elif WASM_BUILD
     dtzrzf_(m, n, a, lda, tau, work, lwork, info );
 
@@ -889,7 +887,7 @@ void LapackInterface::tzrzf<double>( const int& m, const int& n,  double* a, con
 template <> 
 void LapackInterface::tzrzf<float>( const int& m, const int& n,  float* a, const int& lda, float* tau, float* work, const int& lwork, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::tzrzf called"));
 #elif WASM_BUILD    
     stzrzf_(m, n, a, lda, tau, work, lwork, info );
 
@@ -903,7 +901,7 @@ void LapackInterface::tzrzf<float>( const int& m, const int& n,  float* a, const
 template <> 
 void LapackInterface::tzrzf<std::complex<double> >( const int& m, const int& n,  std::complex<double>* a, const int& lda, std::complex<double>* tau, std::complex<double>* work, const int& lwork, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::tzrzf called"));
 #elif WASM_BUILD      
     ztzrzf_(m, n, a, lda, tau, work, lwork, info );
 #endif
@@ -913,7 +911,7 @@ void LapackInterface::tzrzf<std::complex<double> >( const int& m, const int& n, 
 template <> 
 void LapackInterface::tzrzf<std::complex<float> >( const int& m, const int& n,  std::complex<float>* a, const int& lda, std::complex<float>* tau, std::complex<float>* work, const int& lwork, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::tzrzf called"));
 #elif WASM_BUILD      
     ctzrzf_(m, n, a, lda, tau, work, lwork, info );
 
@@ -927,7 +925,7 @@ void LapackInterface::tzrzf<std::complex<float> >( const int& m, const int& n,  
 template <> 
 void LapackInterface::geqp3<double>( const int& m, const int& n,  double* a, const int& lda, int *pivots, double* tau, double* work, const int& lwork, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::geqp3 called"));
 #elif WASM_BUILD       
      dgeqp3_( m, n, a, lda, pivots, tau, work, lwork, info );
 
@@ -941,7 +939,7 @@ void LapackInterface::geqp3<double>( const int& m, const int& n,  double* a, con
 template <> 
 void LapackInterface::geqp3<float>( const int& m, const int& n,  float* a, const int& lda, int *pivots, float* tau, float* work, const int& lwork, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::geqp3 called"));
 #elif WASM_BUILD        
      sgeqp3_( m, n, a, lda, pivots, tau, work, lwork, info );
 
@@ -956,7 +954,7 @@ template <>
 void LapackInterface::geqp3<std::complex<float> >( const int& m, const int& n,  std::complex<float>* a, const int& lda, int *pivots, std::complex<float>* tau, std::complex<float>* work, const int& lwork,  int& info ) {
      TypedWorkSpace<float> rwork(2*n);
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::geqp3 called"));
 #elif WASM_BUILD         
      cgeqp3_( m, n, a, lda, pivots, tau, work, lwork, rwork.data, info );
 
@@ -971,7 +969,7 @@ template <>
 void LapackInterface::geqp3<std::complex<double> >( const int& m, const int& n,  std::complex<double>* a, const int& lda, int *pivots, std::complex<double>*  tau, std::complex<double>* work, const int& lwork,  int& info ) {
      TypedWorkSpace<double> rwork(2*n);
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::geqp3 called"));
 #elif WASM_BUILD       
      zgeqp3_( m, n, a, lda, pivots, tau, work,  lwork, rwork.data, info );
 
@@ -985,7 +983,7 @@ void LapackInterface::geqp3<std::complex<double> >( const int& m, const int& n, 
 template <> 
 void LapackInterface::lascl<double>( const char& type, const int& kl, const int& ku, const double& cfrom, const double& cto,  const int& m, const int& n, double* a, const int& lda, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::lascl called"));
 #elif WASM_BUILD  
 //TODO     dlascl_( type, kl, ku, cfrom, cto, m, n, a, lda, info, 1 ); 
     dlascl_( type, kl, ku, &cfrom, &cto, m, n, a, lda, info, 1 ); 
@@ -1000,7 +998,7 @@ void LapackInterface::lascl<double>( const char& type, const int& kl, const int&
 template <> 
 void LapackInterface::lascl<float>( const char& type, const int& kl, const int& ku, const float& cfrom, const float& cto,  const int& m, const int& n, float* a, const int& lda, int& info ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::lascl called"));
 #elif WASM_BUILD  
 // TODO    slascl_( type, kl, ku, cfrom, cto, m, n, a, lda, info, 1 ); 
     slascl_( type, kl, ku, &cfrom, &cto, m, n, a, lda, info, 1 ); 
@@ -1015,7 +1013,7 @@ void LapackInterface::lascl<float>( const char& type, const int& kl, const int& 
 template <> 
 void LapackInterface::lascl<std::complex<float> >( const char& type, const int& kl, const int& ku, const float& cfrom, const float& cto,  const int& m, const int& n, std::complex<float>* a, const int& lda, int& info) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::lascl called"));
 #elif WASM_BUILD 
 // TODO    clascl_( type, kl, ku, cfrom, cto, m, n, a, lda, info, 1 ); 
     clascl_( type, kl, ku, &cfrom, &cto, m, n, a, lda, info, 1 ); 
@@ -1030,7 +1028,7 @@ void LapackInterface::lascl<std::complex<float> >( const char& type, const int& 
 template <> 
 void LapackInterface::lascl<std::complex<double> >( const char& type, const int& kl, const int& ku, const double& cfrom, const double& cto,  const int& m, const int& n, std::complex<double>* a, const int& lda, int& info) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::lascl called"));
 #elif WASM_BUILD 
 // TODO    zlascl_( type, kl, ku, cfrom, cto, m, n, a, lda, info, 1 ); 
     zlascl_( type, kl, ku, &cfrom, &cto, m, n, a, lda, info, 1 ); 
@@ -1046,7 +1044,7 @@ void LapackInterface::lascl<std::complex<double> >( const char& type, const int&
 template <> 
 double LapackInterface::lange<float>( const char& norm, const int& m, const int& n, const float* a, const int& lda){
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::lange called"));
     return 0;
 #elif WASM_BUILD 
 /*
@@ -1072,7 +1070,7 @@ template <>
 double LapackInterface::lange<double>( const char& norm, const int& m, const int& n, const double* a, const int& lda ){
      TypedWorkSpace<double> work(m);
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::lange called"));
     return 0;
 #elif WASM_BUILD 
      return( dlange_( norm, m, n, a, lda, work.data, 1 ) ); 
@@ -1082,7 +1080,7 @@ double LapackInterface::lange<double>( const char& norm, const int& m, const int
 template <> 
 double LapackInterface::lange<std::complex<float> >( const char& norm, const int& m, const int& n, const std::complex<float>* a, const int& lda ){
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::lange called"));
     return 0;
 #elif WASM_BUILD 
 /*
@@ -1108,7 +1106,7 @@ double LapackInterface::lange<std::complex<float> >( const char& norm, const int
 template <> 
 double LapackInterface::lange<std::complex<double> >( const char& norm, const int& m, const int& n, const std::complex<double>* a, const int& lda) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::lange called"));
     return 0;
 #elif WASM_BUILD 
      TypedWorkSpace<double> work(m);
@@ -1119,7 +1117,7 @@ double LapackInterface::lange<std::complex<double> >( const char& norm, const in
 template <> 
 void LapackInterface::ormqr<float>(const char& side, const char& trans, const int& m, const int& n, const int& k, float* a, const int& lda, float *tau, float *c__, const int& ldc, float* work, const int& lwork, int& info) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::ormqr called"));
 #elif WASM_BUILD 
      sormqr_( side, trans, m, n, k, a, lda, tau, c__, ldc, work, lwork, info, 1, 1 );
 
@@ -1133,7 +1131,7 @@ void LapackInterface::ormqr<float>(const char& side, const char& trans, const in
 template <> 
 void LapackInterface::ormqr<double>(const char& side, const char& trans, const int& m, const int& n, const int& k, double* a, const int& lda, double *tau, double *c__, const int& ldc, double* work, const int& lwork, int& info) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::ormqr called"));
 #elif WASM_BUILD 
      dormqr_( side, trans, m, n, k, a, lda, tau, c__, ldc, work, lwork, info, 1, 1 );
 
@@ -1147,7 +1145,7 @@ void LapackInterface::ormqr<double>(const char& side, const char& trans, const i
 template <> 
 void LapackInterface::ormqr<std::complex<double> >(const char& side, const char& trans, const int& m, const int& n, const int& k, std::complex<double>* a, const int& lda, std::complex<double> *tau, std::complex<double> *c__, const int& ldc, std::complex<double>* work, const int& lwork, int& info) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::ormqr called"));
 #elif WASM_BUILD 
      zunmqr_( side, trans, m, n, k, a, lda, tau, c__, ldc, work, lwork, info, 1, 1 );
 
@@ -1161,7 +1159,7 @@ void LapackInterface::ormqr<std::complex<double> >(const char& side, const char&
 template <> 
 void LapackInterface::ormqr<std::complex<float> >(const char& side, const char& trans, const int& m, const int& n, const int& k, std::complex<float>* a, const int& lda, std::complex<float> *tau, std::complex<float> *c__, const int& ldc, std::complex<float>* work, const int& lwork, int& info) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::ormqr called"));
 #elif WASM_BUILD 
      cunmqr_( side, trans, m, n, k, a, lda, tau, c__, ldc, work, lwork, info, 1, 1 );
 
@@ -1175,7 +1173,7 @@ void LapackInterface::ormqr<std::complex<float> >(const char& side, const char& 
 template <> 
 void LapackInterface::trsm<float>(const char& side, const char& uplo, const char& transA, const char& diag, const int& m, const int& n, const float& alpha, const float* a, const int& lda, float* b, const int& ldb ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::trsm called"));
 #elif WASM_BUILD 
      strsm_( side, uplo, transA, diag, m, n, alpha, a, lda, b, ldb, 1, 1, 1 );
 #endif
@@ -1185,7 +1183,7 @@ void LapackInterface::trsm<float>(const char& side, const char& uplo, const char
 template <> 
 void LapackInterface::trsm<double>(const char& side, const char& uplo, const char& transA, const char& diag, const int& m, const int& n, const double& alpha, const double* a, const int& lda, double* b, const int& ldb ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::trsm called"));
 #elif WASM_BUILD 
      dtrsm_( side, uplo, transA, diag, m, n, alpha, a, lda, b, ldb, 1, 1, 1 );
 #endif
@@ -1195,7 +1193,7 @@ void LapackInterface::trsm<double>(const char& side, const char& uplo, const cha
 template <> 
 void LapackInterface::trsm<std::complex<double> >(const char& side, const char& uplo, const char& transA, const char& diag, const int& m, const int& n, const std::complex<double>& alpha, const std::complex<double>* a, const int& lda, std::complex<double>* b, const int& ldb ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::trsm called"));
 #elif WASM_BUILD 
      ztrsm_( side, uplo, transA, diag, m, n, alpha, a, lda, b, ldb, 1, 1, 1 );
 #endif
@@ -1205,7 +1203,7 @@ void LapackInterface::trsm<std::complex<double> >(const char& side, const char& 
 template <> 
 void LapackInterface::trsm<std::complex<float> >(const char& side, const char& uplo, const char& transA, const char& diag, const int& m, const int& n, const std::complex<float>& alpha, const std::complex<float>* a, const int& lda, std::complex<float>* b, const int& ldb ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::trsm called"));
 #elif WASM_BUILD 
      ctrsm_( side, uplo, transA, diag, m, n, alpha, a, lda, b, ldb, 1, 1, 1 );
 #endif
@@ -1215,7 +1213,7 @@ void LapackInterface::trsm<std::complex<float> >(const char& side, const char& u
 template <> 
 void LapackInterface::ormrz<float>(const char& side, const char& trans, const int& m, const int& n, const int& k, const int& l, float* a, const int& lda, float* tau, float* c__, const int& ldc, float* work, const int& lwork, int& info) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::ormrz called"));
 #elif WASM_BUILD 
    sormrz_( side, trans, m, n, k, l, a, lda, tau, c__, ldc, work, lwork, info, 1, 1 );
 
@@ -1229,7 +1227,7 @@ void LapackInterface::ormrz<float>(const char& side, const char& trans, const in
 template <> 
 void LapackInterface::ormrz<double>(const char& side, const char& trans, const int& m, const int& n, const int& k, const int& l, double* a, const int& lda, double* tau, double* c__, const int& ldc, double* work, const int& lwork, int& info) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::ormrz called"));
 #elif WASM_BUILD 
    dormrz_( side, trans, m, n, k, l, a, lda, tau, c__, ldc, work, lwork, info, 1, 1 );
 
@@ -1243,7 +1241,7 @@ void LapackInterface::ormrz<double>(const char& side, const char& trans, const i
 template <> 
 void LapackInterface::ormrz<std::complex<float> >(const char& side, const char& trans, const int& m, const int& n, const int& k, const int& l, std::complex<float>* a, const int& lda, std::complex<float>* tau, std::complex<float>* c__, const int& ldc, std::complex<float>* work, const int& lwork, int& info) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::ormrz called"));
 #elif WASM_BUILD 
    cunmrz_( side, trans, m, n, k, l, a, lda, tau, c__, ldc, work, lwork, info, 1, 1 );
 
@@ -1257,7 +1255,7 @@ void LapackInterface::ormrz<std::complex<float> >(const char& side, const char& 
 template <> 
 void LapackInterface::ormrz<std::complex<double> >(const char& side, const char& trans, const int& m, const int& n, const int& k, const int& l, std::complex<double>* a, const int& lda, std::complex<double>* tau, std::complex<double>* c__, const int& ldc, std::complex<double>* work, const int& lwork, int& info) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::ormrz called"));
 #elif WASM_BUILD 
    zunmrz_( side, trans, m, n, k, l, a, lda, tau, c__, ldc, work, lwork, info, 1, 1 );
 
@@ -1271,7 +1269,7 @@ void LapackInterface::ormrz<std::complex<double> >(const char& side, const char&
 template <> 
 void LapackInterface::copy<float>( const int& n, const float* x, const int& incx, float* y, const int& incy) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::copy called"));
 #elif WASM_BUILD 
      scopy_(n, x, incx, y, incy );
 #endif
@@ -1281,7 +1279,7 @@ void LapackInterface::copy<float>( const int& n, const float* x, const int& incx
 template <> 
 void LapackInterface::copy<double>( const int& n, const double* x, const int& incx, double* y, const int& incy) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::copy called"));
 #elif WASM_BUILD 
      dcopy_(n, x, incx, y, incy );
 #endif
@@ -1291,7 +1289,7 @@ void LapackInterface::copy<double>( const int& n, const double* x, const int& in
 template <> 
 void LapackInterface::copy<std::complex<float> >( const int& n, const std::complex<float>* x, const int& incx, std::complex<float>* y, const int& incy) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::copy called"));
 #elif WASM_BUILD 
      ccopy_(n, x, incx, y, incy );
 #endif
@@ -1301,7 +1299,7 @@ void LapackInterface::copy<std::complex<float> >( const int& n, const std::compl
 template <> 
 void LapackInterface::copy<std::complex<double> >( const int& n, const std::complex<double>* x, const int& incx, std::complex<double>* y, const int& incy) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::copy called"));
 #elif WASM_BUILD 
      zcopy_(n, x, incx, y, incy );
 #endif
@@ -1310,7 +1308,7 @@ void LapackInterface::copy<std::complex<double> >( const int& n, const std::comp
 template <>
 void LapackInterface::getMachineUnderflow<float>( float& underFlow ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::getMachineUnderflow called"));
 #elif WASM_BUILD 
     underFlow = slamch_('S');
 #endif
@@ -1319,7 +1317,7 @@ void LapackInterface::getMachineUnderflow<float>( float& underFlow ) {
 template <>
 void LapackInterface::getMachineUnderflow<double>( double& underFlow ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::getMachineUnderflow called"));
 #elif WASM_BUILD 
     underFlow = dlamch_('S');
 #endif
@@ -1328,7 +1326,7 @@ void LapackInterface::getMachineUnderflow<double>( double& underFlow ) {
 template <>
 void LapackInterface::getMachinePrecision<float>( float& smallNumber, float& bigNumber ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::getMachinePrecision called"));
 #elif WASM_BUILD     
     smallNumber = slamch_( 'S' )/slamch_( 'P' );
     bigNumber = 1.f/smallNumber;
@@ -1339,7 +1337,7 @@ void LapackInterface::getMachinePrecision<float>( float& smallNumber, float& big
 template <>
 void LapackInterface::getMachinePrecision<double>( double& smallNumber, double& bigNumber ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::getMachinePrecision called"));
 #elif WASM_BUILD     
     smallNumber = dlamch_( 'S' )/dlamch_( 'P' );
     bigNumber = 1.0/smallNumber;
@@ -1350,7 +1348,7 @@ void LapackInterface::getMachinePrecision<double>( double& smallNumber, double& 
 template <> 
 void LapackInterface::laic1<float>(const int& job, const int& j, const float* x, const float& sest, const float* w, const float& gamma, float& sestpr, float& s, float& c__ ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::laic1 called"));
 #elif WASM_BUILD   
     slaic1_( job, j, x, sest, w, gamma, sestpr, s, c__ );
 #endif
@@ -1360,7 +1358,7 @@ void LapackInterface::laic1<float>(const int& job, const int& j, const float* x,
 template <> 
 void LapackInterface::laic1<double>(const int& job, const int& j, const double* x, const double& sest, const double* w, const double& gamma, double& sestpr, double& s, double& c__ ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::laic1 called"));
 #elif WASM_BUILD  
     dlaic1_( job, j, x, sest, w, gamma, sestpr, s, c__ );
 #endif
@@ -1370,7 +1368,7 @@ void LapackInterface::laic1<double>(const int& job, const int& j, const double* 
 template <> 
 void LapackInterface::laic1<std::complex<float> >(const int& job, const int& j, const std::complex<float>* x, const float& sest, const std::complex<float>* w, const std::complex<float>& gamma, float& sestpr, std::complex<float>& s, std::complex<float>& c__ ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::laic1 called"));
 #elif WASM_BUILD  
     claic1_( job, j, x, sest, w, gamma, sestpr, s, c__ );
 #endif
@@ -1381,7 +1379,7 @@ void LapackInterface::laic1<std::complex<float> >(const int& job, const int& j, 
 template <> 
 void LapackInterface::laic1<std::complex<double> >(const int& job, const int& j, const std::complex<double>* x, const double& sest, const std::complex<double>* w, const std::complex<double>& gamma, double& sestpr, std::complex<double>& s, std::complex<double>& c__ ) {
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::laic1 called"));
 #elif WASM_BUILD  
     zlaic1_( job, j, x, sest, w, gamma, sestpr, s, c__ );
 #endif
@@ -1391,7 +1389,7 @@ void LapackInterface::laic1<std::complex<double> >(const int& job, const int& j,
 template <>
 void LapackInterface::potrf<double>( const char& uplo, const int n,  double* a, const int lda, int& info ) { 
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::potrf called"));
 #elif WASM_BUILD  
     dpotrf_(uplo, n, a, lda, info);
     if( info < 0 ) {
@@ -1404,7 +1402,7 @@ void LapackInterface::potrf<double>( const char& uplo, const int n,  double* a, 
 template <>
 void LapackInterface::potrf<float>( const char& uplo, const int n,  float* a, const int lda, int& info ) { 
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::potrf called"));
 #elif WASM_BUILD  
     spotrf_(uplo, n, a, lda, info);
     if( info < 0 ) {
@@ -1417,7 +1415,7 @@ void LapackInterface::potrf<float>( const char& uplo, const int n,  float* a, co
 template <>
 void LapackInterface::potrf<std::complex<double> >( const char& uplo, const int n,  std::complex<double>* a, const int lda, int& info ) { 
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::potrf called"));
 #elif WASM_BUILD  
     zpotrf_(uplo, n, a, lda, info);
     if( info < 0 ) {
@@ -1430,7 +1428,7 @@ void LapackInterface::potrf<std::complex<double> >( const char& uplo, const int 
 template <>
 void LapackInterface::potrf<std::complex<float> >( const char& uplo, const int n,  std::complex<float>* a, const int lda, int& info ) { 
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::potrf called"));
 #elif WASM_BUILD  
     cpotrf_(uplo, n, a, lda, info);
 
@@ -1444,7 +1442,7 @@ void LapackInterface::potrf<std::complex<float> >( const char& uplo, const int n
 template <> 
 void LapackInterface::sytrf<float>( const char& uplo, const int n, float* a,  const int lda, int* pivots, float* work, const int lwork, int& info){ 
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::sytrf called"));
 #elif WASM_BUILD  
     ssytrf_( uplo, n, a, lda, pivots, work, lwork, info );
 
@@ -1457,7 +1455,7 @@ void LapackInterface::sytrf<float>( const char& uplo, const int n, float* a,  co
 template <> 
 void LapackInterface::sytrf<double>( const char& uplo, const int n, double* a,  const int lda, int* pivots, double* work, const int lwork, int& info){ 
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::sytrf called"));
 #elif WASM_BUILD  
     dsytrf_( uplo, n, a, lda, pivots, work, lwork, info );
 
@@ -1470,7 +1468,7 @@ void LapackInterface::sytrf<double>( const char& uplo, const int n, double* a,  
 template <> 
 void LapackInterface::sytrf<std::complex<double> >( const char& uplo, const int n, std::complex<double>* a,  const int lda, int* pivots, std::complex<double>* work, const int lwork, int& info){ 
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::sytrf called"));
 #elif WASM_BUILD  
     zsytrf_( uplo, n, a, lda, pivots, work, lwork, info );
 
@@ -1483,7 +1481,7 @@ void LapackInterface::sytrf<std::complex<double> >( const char& uplo, const int 
 template <> 
 void LapackInterface::sytrf<std::complex<float> >( const char& uplo, const int n, std::complex<float>* a,  const int lda, int* pivots, std::complex<float>* work, const int lwork, int& info){ 
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::sytrf called"));
 #elif WASM_BUILD  
     csytrf_( uplo, n, a, lda, pivots, work, lwork, info );
 
@@ -1499,7 +1497,7 @@ void LapackInterface::sytrf( const char& uplo, const int n, T* a,  const int lda
 template <>
 int LapackInterface::ilaenv<double>( const int& ispec,  const char* name,  const char *opts, const int& n1, const int& n2, const int& n3, const int& n4 ) { 
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::ilaenv called"));
     return 0;
 #elif WASM_BUILD  
      char d[10];
@@ -1511,7 +1509,7 @@ int LapackInterface::ilaenv<double>( const int& ispec,  const char* name,  const
 template <>
 int LapackInterface::ilaenv<float>( const int& ispec,  const char* name,  const char *opts, const int& n1, const int& n2, const int& n3, const int& n4 ) { 
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::ilaenv called"));
     return 0;
 #elif WASM_BUILD  
      char s[10];
@@ -1523,7 +1521,7 @@ int LapackInterface::ilaenv<float>( const int& ispec,  const char* name,  const 
 template <>
 int LapackInterface::ilaenv<std::complex<double> >( const int& ispec,  const char* name,  const char *opts, const int& n1, const int& n2, const int& n3, const int& n4 ) { 
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::ilaenv called"));
     return 0;
 #elif WASM_BUILD  
     char z[10];
@@ -1535,7 +1533,7 @@ int LapackInterface::ilaenv<std::complex<double> >( const int& ispec,  const cha
 template <>
 int LapackInterface::ilaenv<std::complex<float> >( const int& ispec,  const char* name,  const char *opts, const int& n1, const int& n2, const int& n3, const int& n4 ) { 
 #ifdef WASM_BUILD
-    throw std::runtime_error(std::string("LapackInterface::gelss called"));
+    throw std::runtime_error(std::string("LapackInterface::ilaenv called"));
     return 0;
 #elif WASM_BUILD  
      char c[10];
