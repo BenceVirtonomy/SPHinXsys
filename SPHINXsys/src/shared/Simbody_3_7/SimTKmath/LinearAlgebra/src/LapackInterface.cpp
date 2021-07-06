@@ -65,6 +65,7 @@ template <> void LapackInterface::gelss<double>( int m, int n,  int mn, int nrhs
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "dgelss", info );
     }
+    std::cout << "LapackInterface::gelss called" << std::endl;
 }
 
 template <> void LapackInterface::gelss<float>( int m, int n,  int mn, int nrhs,
@@ -82,6 +83,7 @@ template <> void LapackInterface::gelss<float>( int m, int n,  int mn, int nrhs,
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "sgelss", info );
     }
+    std::cout << "LapackInterface::gelss called" << std::endl;
 }
 
 template <> void LapackInterface::gelss<std::complex<float> >( int m, int n,  int mn, int nrhs,
@@ -100,6 +102,7 @@ template <> void LapackInterface::gelss<std::complex<float> >( int m, int n,  in
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "cgelss", info );
     }
+    std::cout << "LapackInterface::gelss called" << std::endl;
 }
 
 template <> void LapackInterface::gelss<std::complex<double> >( int m, int n,  int mn, int nrhs,
@@ -118,6 +121,7 @@ template <> void LapackInterface::gelss<std::complex<double> >( int m, int n,  i
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "zgelss", info );
     }
+    std::cout << "LapackInterface::gelss called" << std::endl;
 }
 
 
@@ -131,6 +135,7 @@ template <> void LapackInterface::potrs<double>
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "dpotrs", info );
     }
+    std::cout << "LapackInterface::potrs called" << std::endl;
 
     return;
 }
@@ -145,6 +150,7 @@ template <> void LapackInterface::potrs<float>
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "spotrs", info );
     }
+    std::cout << "LapackInterface::potrs called" << std::endl;
 
     return;
 }
@@ -159,6 +165,7 @@ template <> void LapackInterface::potrs<std::complex<float> >
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "cpotrs", info );
     }
+    std::cout << "LapackInterface::potrs called" << std::endl;
 
     return;
 }
@@ -173,6 +180,7 @@ template <> void LapackInterface::potrs<std::complex<double> >
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "zpotrs", info );
     }
+    std::cout << "LapackInterface::potrs called" << std::endl;
 
     return;
 }
@@ -187,6 +195,7 @@ template <> void LapackInterface::sytrs<double>
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "dsytrs", info );
     }
+    std::cout << "LapackInterface::sytrs called" << std::endl;
 
     return;
 }
@@ -202,6 +211,7 @@ template <> void LapackInterface::sytrs<float>
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "ssytrs", info );
     }
+    std::cout << "LapackInterface::sytrs called" << std::endl;
 
     return;
 }
@@ -217,6 +227,8 @@ template <> void LapackInterface::sytrs<std::complex<float> >
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "chetrs", info );
     }
+    std::cout << "LapackInterface::sytrs called" << std::endl;
+
     return;
 }
 
@@ -232,6 +244,8 @@ template <> void LapackInterface::sytrs<std::complex<double> >
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "zhetrs", info );
     }
+    std::cout << "LapackInterface::sytrs called" << std::endl;
+
     return;
 }
 
@@ -245,6 +259,7 @@ template <> void LapackInterface::getrs<double>
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "dgetrs", info );
     }
+    std::cout << "LapackInterface::getrs called" << std::endl;
 
     return;
 }
@@ -260,6 +275,7 @@ template <> void LapackInterface::getrs<float>
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "sgetrs", info );
     }
+    std::cout << "LapackInterface::getrs called" << std::endl;
 
     return;
 }
@@ -274,6 +290,7 @@ template <> void LapackInterface::getrs<complex<float> >
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "cgetrs", info );
     }
+    std::cout << "LapackInterface::getrs called" << std::endl;
 
     return;
 }
@@ -287,6 +304,7 @@ template <> void LapackInterface::getrs<complex<double> >
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "zgetrs", info );
     }
+    std::cout << "LapackInterface::getrs called" << std::endl;
 
     return;
 }
@@ -318,7 +336,7 @@ template <> void LapackInterface::syevx<float>( char jobz, char range,
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "ssyevx", info );
     }
-
+    std::cout << "LapackInterface::syevx called" << std::endl;
 
     return;
 }
@@ -343,6 +361,8 @@ template <> void LapackInterface::syevx<double>( char jobz, char range,
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "dsyevx", info );
     }
+    std::cout << "LapackInterface::syevx called" << std::endl;
+
     return;
 }
 
@@ -367,6 +387,8 @@ template <> void LapackInterface::syevx<std::complex<double> >( char jobz,
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "zheevx", info );
     }
+    std::cout << "LapackInterface::syevx called" << std::endl;
+
     return;
 }
 
@@ -391,6 +413,8 @@ template <> void LapackInterface::syevx<std::complex<float> >( char jobz,
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "cheevx", info );
     }
+    std::cout << "LapackInterface::syevx called" << std::endl;
+
     return;
 }
 
@@ -412,6 +436,7 @@ template <> void LapackInterface::syev<float>( char jobz,  char uplo, int n,
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "ssyev", info );
     }
+    std::cout << "LapackInterface::syev called" << std::endl;
 } 
 
 template <> void LapackInterface::syev<double>( char jobz,  char uplo, int n, 
@@ -426,6 +451,7 @@ template <> void LapackInterface::syev<double>( char jobz,  char uplo, int n,
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "dsyev", info );
     }
+    std::cout << "LapackInterface::syev called" << std::endl;
 } 
 
 template <> void LapackInterface::syev<std::complex<float> >( char jobz,  char uplo, int n, 
@@ -446,6 +472,7 @@ template <> void LapackInterface::syev<std::complex<float> >( char jobz,  char u
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "cheev", info );
     }
+    std::cout << "LapackInterface::syev called" << std::endl;
 } 
 
 template <> void LapackInterface::syev<std::complex<double> >( char jobz,  char uplo, int n, 
@@ -466,6 +493,8 @@ template <> void LapackInterface::syev<std::complex<double> >( char jobz,  char 
     int lwork = (int)wsize[0].real();
     TypedWorkSpace<std::complex<double> > work(lwork);
     zheev_( jobz, uplo, n, a, lda, eigenValues, work.data, lwork, rwork.data, info, 1, 1 );
+
+    std::cout << "LapackInterface::syev called" << std::endl;
 } 
 template <class T> 
 void LapackInterface::gesdd( char jobz, int m, int n, T* a, int lda,
@@ -491,6 +520,7 @@ void LapackInterface::gesdd<float>( char jobz, int m, int n, float* a, int lda,
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "sgesdd", info );
     }
+    std::cout << "LapackInterface::gesdd called" << std::endl;
 }
 template <>
 void LapackInterface::gesdd<double>( char jobz, int m, int n, double* a, int lda,
@@ -510,6 +540,7 @@ void LapackInterface::gesdd<double>( char jobz, int m, int n, double* a, int lda
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "dgesdd", info );
     }
+    std::cout << "LapackInterface::gesdd called" << std::endl;
 }
 // TODO REMOVE when added to SimTKlapack.
 extern "C" {
@@ -539,6 +570,8 @@ void LapackInterface::gesdd<std::complex<float> >( char jobz, int m, int n,
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "cgesdd", info );
     }
+    std::cout << "LapackInterface::gesdd called" << std::endl;
+
     return;
 }
 
@@ -566,6 +599,8 @@ void LapackInterface::gesdd<std::complex<double> >( char jobz, int m, int n,
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "zgesdd", info );
     }
+    std::cout << "LapackInterface::gesdd called" << std::endl;
+
     return;
 }
 // eigenvlaues for nonsymmetric matrices
@@ -627,6 +662,7 @@ template <> void LapackInterface::geev<double>
         printf("\n");
     }
 */
+    std::cout << "LapackInterface::geev called" << std::endl;
 }
 
 template <> void LapackInterface::geev<float>
@@ -674,7 +710,8 @@ template <> void LapackInterface::geev<float>
             }
             j++;
     }
-    } 
+    }
+    std::cout << "LapackInterface::geev called" << std::endl; 
 }
 template <> void LapackInterface::geev<std::complex<float> >
    (char jobvl, char jobvr,
@@ -692,7 +729,7 @@ template <> void LapackInterface::geev<std::complex<float> >
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "cgeev", info );
     }
-
+    std::cout << "LapackInterface::geev called" << std::endl;
 }
 
 template <> void LapackInterface::geev<std::complex<double> >
@@ -711,16 +748,18 @@ template <> void LapackInterface::geev<std::complex<double> >
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "zgeev", info );
     }
-
+    std::cout << "LapackInterface::geev called" << std::endl;
 }
 template <> 
 void  LapackInterface::getrf<double>( const int m, const int n, double *lu, const int lda,  int *pivots, int& info ) {
     dgetrf_(m, n, lu, lda, pivots, info   );
+    std::cout << "LapackInterface::getrf called" << std::endl;
    return;
 }
 template <> 
 void  LapackInterface::getrf<float>( const int m, const int n, float *lu, const int lda,  int *pivots, int& info ) {
     sgetrf_(m, n, lu, lda, pivots, info   );
+        std::cout << "LapackInterface::getrf called" << std::endl;
    return;
 }
 template <> 
@@ -730,7 +769,7 @@ void  LapackInterface::getrf<std::complex<double> >( const int m, const int n, s
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "zgetrf", info );
     }
-
+    std::cout << "LapackInterface::getrf called" << std::endl;
    return;
 }
 template <> 
@@ -740,6 +779,7 @@ void  LapackInterface::getrf<std::complex<float> >( const int m, const int n, st
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "cgetrf", info );
     }
+        std::cout << "LapackInterface::getrf called" << std::endl;
    return;
 }
 
@@ -750,6 +790,7 @@ void LapackInterface::tzrzf<double>( const int& m, const int& n,  double* a, con
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "dtzrzf", info );
     }
+    std::cout << "LapackInterface::tzrzf called" << std::endl;
     return;
 }
 
@@ -760,12 +801,14 @@ void LapackInterface::tzrzf<float>( const int& m, const int& n,  float* a, const
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "stzrzf", info );
     }
+    std::cout << "LapackInterface::tzrzf called" << std::endl;
     return;
 }
 
 template <> 
 void LapackInterface::tzrzf<std::complex<double> >( const int& m, const int& n,  std::complex<double>* a, const int& lda, std::complex<double>* tau, std::complex<double>* work, const int& lwork, int& info ) {
     ztzrzf_(m, n, a, lda, tau, work, lwork, info );
+    std::cout << "LapackInterface::tzrzf called" << std::endl;
     return;
 }
 
@@ -776,6 +819,7 @@ void LapackInterface::tzrzf<std::complex<float> >( const int& m, const int& n,  
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "ctzrzf", info );
     }
+    std::cout << "LapackInterface::tzrzf called" << std::endl;
     return;
 }
 
@@ -786,6 +830,7 @@ void LapackInterface::geqp3<double>( const int& m, const int& n,  double* a, con
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "dgeqp3", info );
     }
+    std::cout << "LapackInterface::geqp3 called" << std::endl;
      return;
 }
 
@@ -796,6 +841,7 @@ void LapackInterface::geqp3<float>( const int& m, const int& n,  float* a, const
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "sgeqp3", info );
     }
+    std::cout << "LapackInterface::geqp3 called" << std::endl;
      return;
 }
 
@@ -807,6 +853,7 @@ void LapackInterface::geqp3<std::complex<float> >( const int& m, const int& n,  
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "cgeqp3", info );
     }
+    std::cout << "LapackInterface::geqp3 called" << std::endl;
      return;
 }
 
@@ -818,6 +865,7 @@ void LapackInterface::geqp3<std::complex<double> >( const int& m, const int& n, 
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "zgeqp3", info );
     }
+    std::cout << "LapackInterface::geqp3 called" << std::endl;
      return;
 }
 
@@ -829,6 +877,7 @@ void LapackInterface::lascl<double>( const char& type, const int& kl, const int&
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "dlascl", info );
     }
+    std::cout << "LapackInterface::lascl called" << std::endl;
     return;
 }
 
@@ -840,6 +889,7 @@ void LapackInterface::lascl<float>( const char& type, const int& kl, const int& 
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "slascl", info );
     }
+    std::cout << "LapackInterface::lascl called" << std::endl;
     return;
 }
 
@@ -851,6 +901,7 @@ void LapackInterface::lascl<std::complex<float> >( const char& type, const int& 
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "clascl", info );
     }
+    std::cout << "LapackInterface::lascl called" << std::endl;
     return;
 }
 
@@ -862,6 +913,7 @@ void LapackInterface::lascl<std::complex<double> >( const char& type, const int&
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "zlascl", info );
     }
+    std::cout << "LapackInterface::lascl called" << std::endl;
     return;
 }
 
@@ -883,12 +935,14 @@ double LapackInterface::lange<float>( const char& norm, const int& m, const int&
          for (int i=0; i<m; i++)
              da.data[j*m + i] = a[j*lda + i];
      // leading dimension of da.data is m now, not lda
+     std::cout << "LapackInterface::lange called" << std::endl;
      return( dlange_( norm, m, n, da.data, m, work.data, 1 ) );
 }
  
 template <> 
 double LapackInterface::lange<double>( const char& norm, const int& m, const int& n, const double* a, const int& lda ){
      TypedWorkSpace<double> work(m);
+     std::cout << "LapackInterface::lange called" << std::endl;
      return( dlange_( norm, m, n, a, lda, work.data, 1 ) ); 
 }
  
@@ -909,12 +963,14 @@ double LapackInterface::lange<std::complex<float> >( const char& norm, const int
          for (int i=0; i<m; i++)
              za.data[j*m + i] = a[j*lda + i];
      // leading dimension of za.data is m now, not lda
+     std::cout << "LapackInterface::lange called" << std::endl;
      return zlange_( norm, m, n, za.data, m, work.data, 1 );    
 }
  
 template <> 
 double LapackInterface::lange<std::complex<double> >( const char& norm, const int& m, const int& n, const std::complex<double>* a, const int& lda) {
      TypedWorkSpace<double> work(m);
+     std::cout << "LapackInterface::lange called" << std::endl;
      return( zlange_( norm, m, n, a, lda, work.data, 1 ) );
 }
  
@@ -926,6 +982,7 @@ void LapackInterface::ormqr<float>(const char& side, const char& trans, const in
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "sormqr", info );
     }
+    std::cout << "LapackInterface::ormqr called" << std::endl;
      return;
 }
 
@@ -937,6 +994,7 @@ void LapackInterface::ormqr<double>(const char& side, const char& trans, const i
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "dormqr", info );
     }
+    std::cout << "LapackInterface::ormqr called" << std::endl;
      return;
 }
 
@@ -948,6 +1006,7 @@ void LapackInterface::ormqr<std::complex<double> >(const char& side, const char&
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "zunmqr", info );
     }
+    std::cout << "LapackInterface::ormqr called" << std::endl;
      return;
 }
 
@@ -959,30 +1018,35 @@ void LapackInterface::ormqr<std::complex<float> >(const char& side, const char& 
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "cunmqr", info );
     }
+    std::cout << "LapackInterface::ormqr called" << std::endl;
      return;
 }
 
 template <> 
 void LapackInterface::trsm<float>(const char& side, const char& uplo, const char& transA, const char& diag, const int& m, const int& n, const float& alpha, const float* a, const int& lda, float* b, const int& ldb ) {
      strsm_( side, uplo, transA, diag, m, n, alpha, a, lda, b, ldb, 1, 1, 1 );
+     std::cout << "LapackInterface::trsm called" << std::endl;
      return;
 }
 
 template <> 
 void LapackInterface::trsm<double>(const char& side, const char& uplo, const char& transA, const char& diag, const int& m, const int& n, const double& alpha, const double* a, const int& lda, double* b, const int& ldb ) {
      dtrsm_( side, uplo, transA, diag, m, n, alpha, a, lda, b, ldb, 1, 1, 1 );
+     std::cout << "LapackInterface::trsm called" << std::endl;
      return;
 }
 
 template <> 
 void LapackInterface::trsm<std::complex<double> >(const char& side, const char& uplo, const char& transA, const char& diag, const int& m, const int& n, const std::complex<double>& alpha, const std::complex<double>* a, const int& lda, std::complex<double>* b, const int& ldb ) {
      ztrsm_( side, uplo, transA, diag, m, n, alpha, a, lda, b, ldb, 1, 1, 1 );
+     std::cout << "LapackInterface::trsm called" << std::endl;
      return;
 }
 
 template <> 
 void LapackInterface::trsm<std::complex<float> >(const char& side, const char& uplo, const char& transA, const char& diag, const int& m, const int& n, const std::complex<float>& alpha, const std::complex<float>* a, const int& lda, std::complex<float>* b, const int& ldb ) {
      ctrsm_( side, uplo, transA, diag, m, n, alpha, a, lda, b, ldb, 1, 1, 1 );
+     std::cout << "LapackInterface::trsm called" << std::endl;
      return;
 }
 template <> 
@@ -992,6 +1056,7 @@ void LapackInterface::ormrz<float>(const char& side, const char& trans, const in
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "sormrz", info );
     }
+    std::cout << "LapackInterface::ormrz called" << std::endl;
    return;
 }
 
@@ -1002,6 +1067,7 @@ void LapackInterface::ormrz<double>(const char& side, const char& trans, const i
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "dormrz", info );
     }
+    std::cout << "LapackInterface::ormrz called" << std::endl;
    return;
 }
 
@@ -1012,6 +1078,7 @@ void LapackInterface::ormrz<std::complex<float> >(const char& side, const char& 
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "cunmrz", info );
     }
+    std::cout << "LapackInterface::ormrz called" << std::endl;
    return;
 }
 
@@ -1022,40 +1089,47 @@ void LapackInterface::ormrz<std::complex<double> >(const char& side, const char&
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "zunmrz", info );
     }
+    std::cout << "LapackInterface::ormrz called" << std::endl;
    return;
 }
 
 template <> 
 void LapackInterface::copy<float>( const int& n, const float* x, const int& incx, float* y, const int& incy) {
      scopy_(n, x, incx, y, incy );
+     std::cout << "LapackInterface::copy called" << std::endl;
      return;
 }
 
 template <> 
 void LapackInterface::copy<double>( const int& n, const double* x, const int& incx, double* y, const int& incy) {
      dcopy_(n, x, incx, y, incy );
+     std::cout << "LapackInterface::copy called" << std::endl;
      return;
 }
 
 template <> 
 void LapackInterface::copy<std::complex<float> >( const int& n, const std::complex<float>* x, const int& incx, std::complex<float>* y, const int& incy) {
      ccopy_(n, x, incx, y, incy );
+     std::cout << "LapackInterface::copy called" << std::endl;
      return;
 }
 
 template <> 
 void LapackInterface::copy<std::complex<double> >( const int& n, const std::complex<double>* x, const int& incx, std::complex<double>* y, const int& incy) {
      zcopy_(n, x, incx, y, incy );
+     std::cout << "LapackInterface::copy called" << std::endl;
      return;
 }
 template <>
 void LapackInterface::getMachineUnderflow<float>( float& underFlow ) {
     underFlow = slamch_('S');
+    std::cout << "LapackInterface::getMachineUnderflow called" << std::endl;
     return;
 }
 template <>
 void LapackInterface::getMachineUnderflow<double>( double& underFlow ) {
     underFlow = dlamch_('S');
+    std::cout << "LapackInterface::getMachineUnderflow called" << std::endl;
     return;
 }
 template <>
@@ -1064,6 +1138,7 @@ void LapackInterface::getMachinePrecision<float>( float& smallNumber, float& big
     smallNumber = slamch_( 'S' )/slamch_( 'P' );
     bigNumber = 1.f/smallNumber;
     slabad_(smallNumber, bigNumber );
+    std::cout << "LapackInterface::getMachinePrecision called" << std::endl;
 }
 
 template <>
@@ -1072,23 +1147,27 @@ void LapackInterface::getMachinePrecision<double>( double& smallNumber, double& 
     smallNumber = dlamch_( 'S' )/dlamch_( 'P' );
     bigNumber = 1.0/smallNumber;
     dlabad_(smallNumber, bigNumber );
+    std::cout << "LapackInterface::getMachinePrecision called" << std::endl;
 }
 
 template <> 
 void LapackInterface::laic1<float>(const int& job, const int& j, const float* x, const float& sest, const float* w, const float& gamma, float& sestpr, float& s, float& c__ ) {
     slaic1_( job, j, x, sest, w, gamma, sestpr, s, c__ );
+    std::cout << "LapackInterface::laic1 called" << std::endl;
     return;
 }
 
 template <> 
 void LapackInterface::laic1<double>(const int& job, const int& j, const double* x, const double& sest, const double* w, const double& gamma, double& sestpr, double& s, double& c__ ) {
     dlaic1_( job, j, x, sest, w, gamma, sestpr, s, c__ );
+    std::cout << "LapackInterface::laic1 called" << std::endl;
     return;
 }
 
 template <> 
 void LapackInterface::laic1<std::complex<float> >(const int& job, const int& j, const std::complex<float>* x, const float& sest, const std::complex<float>* w, const std::complex<float>& gamma, float& sestpr, std::complex<float>& s, std::complex<float>& c__ ) {
     claic1_( job, j, x, sest, w, gamma, sestpr, s, c__ );
+    std::cout << "LapackInterface::laic1 called" << std::endl;
     return;
 }
 
@@ -1096,6 +1175,7 @@ void LapackInterface::laic1<std::complex<float> >(const int& job, const int& j, 
 template <> 
 void LapackInterface::laic1<std::complex<double> >(const int& job, const int& j, const std::complex<double>* x, const double& sest, const std::complex<double>* w, const std::complex<double>& gamma, double& sestpr, std::complex<double>& s, std::complex<double>& c__ ) {
     zlaic1_( job, j, x, sest, w, gamma, sestpr, s, c__ );
+    std::cout << "LapackInterface::laic1 called" << std::endl;
     return;
 }
 
@@ -1106,6 +1186,7 @@ void LapackInterface::potrf<double>( const char& uplo, const int n,  double* a, 
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "dpotrf", info );
     }
+    std::cout << "LapackInterface::potrf called" << std::endl;
 
     return;
  }
@@ -1116,6 +1197,7 @@ void LapackInterface::potrf<float>( const char& uplo, const int n,  float* a, co
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "spotrf", info );
     }
+    std::cout << "LapackInterface::potrf called" << std::endl;
 
     return;
  }
@@ -1126,6 +1208,7 @@ void LapackInterface::potrf<std::complex<double> >( const char& uplo, const int 
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "zpotrf", info );
     }
+    std::cout << "LapackInterface::potrf called" << std::endl;
 
     return;
  }
@@ -1137,6 +1220,7 @@ void LapackInterface::potrf<std::complex<float> >( const char& uplo, const int n
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "cpotrf", info );
     }
+    std::cout << "LapackInterface::potrf called" << std::endl;
 
     return;
  }
@@ -1148,6 +1232,7 @@ void LapackInterface::sytrf<float>( const char& uplo, const int n, float* a,  co
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "ssytrf", info );
     }
+    std::cout << "LapackInterface::sytrf called" << std::endl;
     return;
 }
 template <> 
@@ -1158,6 +1243,7 @@ void LapackInterface::sytrf<double>( const char& uplo, const int n, double* a,  
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "dsytrf", info );
     }
+    std::cout << "LapackInterface::sytrf called" << std::endl;
     return;
 }
 template <> 
@@ -1168,6 +1254,7 @@ void LapackInterface::sytrf<std::complex<double> >( const char& uplo, const int 
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "zsytrf", info );
     }
+    std::cout << "LapackInterface::sytrf called" << std::endl;
     return;
 }
 template <> 
@@ -1178,6 +1265,7 @@ void LapackInterface::sytrf<std::complex<float> >( const char& uplo, const int n
     if( info < 0 ) {
         SimTK_THROW2( SimTK::Exception::IllegalLapackArg, "csytrf", info );
     }
+    std::cout << "LapackInterface::sytrf called" << std::endl;
     return;
 }
 template <typename T> 
@@ -1188,6 +1276,7 @@ int LapackInterface::ilaenv<double>( const int& ispec,  const char* name,  const
      char d[10];
      d[0] = 'd';
      d[1] = '\0';
+     std::cout << "LapackInterface::ilaenv called" << std::endl;
      return (ilaenv_( ispec, strcat( d, name), opts, n1, n2, n3, n3, 6, (int)strlen(opts)) ); 
 }
 template <>
@@ -1195,6 +1284,7 @@ int LapackInterface::ilaenv<float>( const int& ispec,  const char* name,  const 
      char s[10];
      s[0] = 's';
      s[1] = '\0';
+     std::cout << "LapackInterface::ilaenv called" << std::endl;
      return (ilaenv_( ispec, strcat( s, name), opts, n1, n2, n3, n3, 6, (int)strlen(opts)) ); 
 }
 template <>
@@ -1202,6 +1292,7 @@ int LapackInterface::ilaenv<std::complex<double> >( const int& ispec,  const cha
      char z[10];
      z[0] = 'z';
      z[1] = '\0';
+     std::cout << "LapackInterface::ilaenv called" << std::endl;
      return (ilaenv_( ispec, strcat( z, name), opts, n1, n2, n3, n3, 6, (int)strlen(opts)) ); 
 }
 template <>
@@ -1209,6 +1300,7 @@ int LapackInterface::ilaenv<std::complex<float> >( const int& ispec,  const char
      char c[10];
      c[0] = 'c';
      c[1] = '\0';
+     std::cout << "LapackInterface::ilaenv called" << std::endl;
      return (ilaenv_( ispec, strcat( c, name), opts, n1, n2, n3, n3, 6, (int)strlen(opts)) ); 
 }
 
