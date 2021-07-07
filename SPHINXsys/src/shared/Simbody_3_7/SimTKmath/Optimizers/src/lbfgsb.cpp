@@ -52,8 +52,8 @@
 #include <ctime>
 #include <cstring>
 
-#define WASM_BUILD
-#ifdef WASM_BUILD
+
+#ifdef SIMBODY_WITHOUT_LAPACK
 int SimTK::LBFGSBOptimizer::setulb_(int *n, int *m, Real *x, Real *l,
       Real *u, int *nbd, Real *f, Real *g,
       Real *factr, Real *pgtol, Real *wa, int *iwa,
@@ -63,7 +63,7 @@ int SimTK::LBFGSBOptimizer::setulb_(int *n, int *m, Real *x, Real *l,
           throw std::runtime_error(std::string("SimTK::LBFGSBOptimizer::setulb_ called"));
           return 0;
         }
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
 
 #ifdef _MSC_VER
 #pragma warning(disable:4996) // don't warn about strcat, sprintf, etc.

@@ -30,15 +30,15 @@
 #include <iostream> 
 #include <cmath>
 
-#define WASM_BUILD
-#ifdef WASM_BUILD
+
+#ifdef SIMBODY_WITHOUT_LAPACK
 void SimTK::LBFGSOptimizer::lbfgs_
    (int n, int m, SimTK::Real *x, SimTK::Real *f, 
     int *iprint, SimTK::Real *eps, SimTK::Real *xtol)
       { 
           throw std::runtime_error(std::string("SimTK::LBFGSOptimizer::lbfgs_ called"));
         }
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
 
 #ifdef _MSC_VER
 #pragma warning(disable:4996) // don't warn about strcat, sprintf, etc.
@@ -1384,4 +1384,4 @@ void lb1_( int *iprint, int *iter, int *nfun, Real *gnorm, int *n,
 /*  END*/
 }
 
-#endif // WASM_BUILD
+#endif // SIMBODY_WITHOUT_LAPACK

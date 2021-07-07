@@ -5,7 +5,8 @@ cmake_minimum_required(VERSION 3.12)
 project(SPHINXsys VERSION 1.0.0 LANGUAGES CXX)
 
 # webassembly build #
-set(WASM_BUILD 0)
+set(WASM_BUILD 1)
+add_definitions(-DSIMBODY_WITHOUT_LAPACK)
 
 # oneTBB #
 # "off": oneTBB not built by this project

@@ -29,7 +29,7 @@
  * Each method must be explicitly specialized for the supported precisions.
  */
 
-#define WASM_BUILD
+
 
 #include "SimTKcommon/internal/common.h"
 #include "SimTKlapack.h"
@@ -72,7 +72,7 @@ public:
 
 };
 
-#ifndef WASM_BUILD
+#ifndef SIMBODY_WITHOUT_LAPACK
     // xGEMM //
 
 template <> inline void Lapack::gemm<float>
@@ -124,7 +124,7 @@ template <> inline void Lapack::gemm< complex<double> >
     );
 }
 
-#endif // WASM_BUILD
+#endif // SIMBODY_WITHOUT_LAPACK
 
     // xGETRI //
 
@@ -137,9 +137,9 @@ template <> inline void Lapack::getri<float>
     int          lwork, 
     int&         info )
 {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("Lapack::getri called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     sgetri_(n,a,lda,ipiv,work,lwork,info);
 #endif
 }
@@ -153,9 +153,9 @@ template <> inline void Lapack::getri<double>
     int          lwork, 
     int&         info )
 {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("Lapack::getri called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     dgetri_(n,a,lda,ipiv,work,lwork,info);
 #endif
 }
@@ -169,9 +169,9 @@ template <> inline void Lapack::getri< complex<float> >
     int             lwork, 
     int&            info )
 {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("Lapack::getri called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     cgetri_(n,a,lda,ipiv,work,lwork,info);
 #endif
 }
@@ -185,9 +185,9 @@ template <> inline void Lapack::getri< complex<double> >
     int             lwork, 
     int&            info )
 {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("Lapack::getri called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     zgetri_(n,a,lda,ipiv,work,lwork,info);
 #endif
 }
@@ -201,9 +201,9 @@ template <> inline void Lapack::getrf<float>
     int          ipiv[], 
     int&         info )
 {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("Lapack::getrf called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     sgetrf_(m,n,a,lda,ipiv,info);
 #endif
 }
@@ -216,9 +216,9 @@ template <> inline void Lapack::getrf<double>
     int          ipiv[], 
     int&         info )
 {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("Lapack::getrf called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     dgetrf_(m,n,a,lda,ipiv,info);
 #endif
 }
@@ -231,9 +231,9 @@ template <> inline void Lapack::getrf< complex<float> >
     int             ipiv[], 
     int&            info )
 {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("Lapack::getrf called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     cgetrf_(m,n,a,lda,ipiv,info);
 #endif
 }
@@ -246,9 +246,9 @@ template <> inline void Lapack::getrf< complex<double> >
     int             ipiv[], 
     int&            info )
 {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("Lapack::getrf called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     zgetrf_(m,n,a,lda,ipiv,info);
 #endif
 }

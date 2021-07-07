@@ -9,8 +9,8 @@
 #include "IpoptConfig.h"
 #include "IpBlas.hpp"
 
-#define WASM_BUILD
-#ifndef WASM_BUILD
+
+#ifndef SIMBODY_WITHOUT_LAPACK
 
 #if SimTK_DEFAULT_PRECISION==1 // float
 #define DCOPY   scopy_
@@ -132,7 +132,7 @@ extern "C"
                              int transa_len, int diag_len);
 }
 
-#endif // WASM_BUILD
+#endif // SIMBODY_WITHOUT_LAPACK
 
 namespace SimTKIpopt
 {
@@ -141,10 +141,10 @@ namespace SimTKIpopt
   Number IpBlasDdot(Index size, const Number *x, Index incX, const Number *y,
                     Index incY)
   {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("SimTKIpopt::IpBlasDdot called"));
     return 0;
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     ipfint n=size, INCX=incX, INCY=incY;
 
     return DDOT(&n, x, &INCX, y, &INCY);
@@ -154,10 +154,10 @@ namespace SimTKIpopt
   /* Interface to FORTRAN routine DNRM2. */
   Number IpBlasDnrm2(Index size, const Number *x, Index incX)
   {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("SimTKIpopt::IpBlasDnrm2 called"));
     return 0;
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     ipfint n=size, INCX=incX;
 
     return DNRM2(&n, x, &INCX);
@@ -167,10 +167,10 @@ namespace SimTKIpopt
   /* Interface to FORTRAN routine DASUM. */
   Number IpBlasDasum(Index size, const Number *x, Index incX)
   {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("SimTKIpopt::IpBlasDasum called"));
     return 0;
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     ipfint n=size, INCX=incX;
 
     return DASUM(&n, x, &INCX);
@@ -180,10 +180,10 @@ namespace SimTKIpopt
   /* Interface to FORTRAN routine DASUM. */
   Index IpBlasIdamax(Index size, const Number *x, Index incX)
   {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("SimTKIpopt::IpBlasIdamax called"));
     return 0;
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     ipfint n=size, INCX=incX;
 
     return (Index) IDAMAX(&n, x, &INCX);
@@ -193,9 +193,9 @@ namespace SimTKIpopt
   /* Interface to FORTRAN routine DCOPY. */
   void IpBlasDcopy(Index size, const Number *x, Index incX, Number *y, Index incY)
   {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("SimTKIpopt::IpBlasDcopy called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     ipfint N=size, INCX=incX, INCY=incY;
 
     DCOPY(&N, x, &INCX, y, &INCY);
@@ -206,9 +206,9 @@ namespace SimTKIpopt
   void IpBlasDaxpy(Index size, Number alpha, const Number *x, Index incX, Number *y,
                    Index incY)
   {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("SimTKIpopt::IpBlasDaxpy called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     ipfint N=size, INCX=incX, INCY=incY;
 
     DAXPY(&N, &alpha, x, &INCX, y, &INCY);
@@ -218,9 +218,9 @@ namespace SimTKIpopt
   /* Interface to FORTRAN routine DSCAL. */
   void IpBlasDscal(Index size, Number alpha, Number *x, Index incX)
   {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("SimTKIpopt::IpBlasDscal called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     ipfint N=size, INCX=incX;
 
     DSCAL(&N, &alpha, x, &INCX);
@@ -231,9 +231,9 @@ namespace SimTKIpopt
                    const Number* A, Index ldA, const Number* x,
                    Index incX, Number beta, Number* y, Index incY)
   {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("SimTKIpopt::IpBlasDgemv called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     ipfint M=nCols, N=nRows, LDA=ldA, INCX=incX, INCY=incY;
 
     char TRANS;
@@ -253,9 +253,9 @@ namespace SimTKIpopt
                    const Number* x, Index incX, Number beta, Number* y,
                    Index incY)
   {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("SimTKIpopt::IpBlasDsymv called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     ipfint N=n, LDA=ldA, INCX=incX, INCY=incY;
 
     char UPLO='L';
@@ -269,9 +269,9 @@ namespace SimTKIpopt
                    Number alpha, const Number* A, Index ldA, const Number* B,
                    Index ldB, Number beta, Number* C, Index ldC)
   {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("SimTKIpopt::IpBlasDgemm called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     ipfint M=m, N=n, K=k, LDA=ldA, LDB=ldB, LDC=ldC;
 
     char TRANSA;
@@ -298,9 +298,9 @@ namespace SimTKIpopt
                    Number alpha, const Number* A, Index ldA,
                    Number beta, Number* C, Index ldC)
   {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("SimTKIpopt::IpBlasDsyrk called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     ipfint N=ndim, K=nrank, LDA=ldA, LDC=ldC;
 
     char UPLO='L';
@@ -320,9 +320,9 @@ namespace SimTKIpopt
   void IpBlasDtrsm(bool trans, Index ndim, Index nrhs, Number alpha,
                    const Number* A, Index ldA, Number* B, Index ldB)
   {
-#ifdef WASM_BUILD
+#ifdef SIMBODY_WITHOUT_LAPACK
     throw std::runtime_error(std::string("SimTKIpopt::IpBlasDtrsm called"));
-#elif WASM_BUILD
+#elif SIMBODY_WITHOUT_LAPACK
     ipfint M=ndim, N=nrhs, LDA=ldA, LDB=ldB;
 
     char SIDE = 'L';
