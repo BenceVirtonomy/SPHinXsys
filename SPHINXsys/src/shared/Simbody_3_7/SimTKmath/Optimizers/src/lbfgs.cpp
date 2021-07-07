@@ -30,6 +30,16 @@
 #include <iostream> 
 #include <cmath>
 
+#define WASM_BUILD
+#ifdef WASM_BUILD
+void SimTK::LBFGSOptimizer::lbfgs_
+   (int n, int m, SimTK::Real *x, SimTK::Real *f, 
+    int *iprint, SimTK::Real *eps, SimTK::Real *xtol)
+      { 
+          throw std::runtime_error(std::string("SimTK::LBFGSOptimizer::lbfgs_ called"));
+        }
+#elif WASM_BUILD
+
 #ifdef _MSC_VER
 #pragma warning(disable:4996) // don't warn about strcat, sprintf, etc.
 #endif
@@ -1373,3 +1383,5 @@ void lb1_( int *iprint, int *iter, int *nfun, Real *gnorm, int *n,
 /*  RETURN*/
 /*  END*/
 }
+
+#endif // WASM_BUILD

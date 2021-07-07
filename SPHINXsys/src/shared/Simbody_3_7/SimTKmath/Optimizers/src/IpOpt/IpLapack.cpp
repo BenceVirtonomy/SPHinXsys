@@ -9,6 +9,9 @@
 #include "IpoptConfig.h"
 #include "IpLapack.hpp"
 
+#define WASM_BUILD
+#ifndef WASM_BUILD
+
 #if SimTK_DEFAULT_PRECISION==1 // float
 #define DPOTRS  spotrs_
 #define DPOTRF  spotrf_
@@ -55,12 +58,17 @@ extern "C"
                              int jobz_len, int uplo_len);
 }
 
+#endif // WASM_BUILD
+
 namespace SimTKIpopt
 {
   /* Interface to FORTRAN routine DPOTRS. */
   void IpLapackDpotrs(Index ndim, Index nrhs, const Number *a, Index lda,
                       Number *b, Index ldb)
   {
+#ifdef WASM_BUILD
+    throw std::runtime_error(std::string("SimTKIpopt::IpLapackDpotrs called"));
+#elif WASM_BUILD
 #ifdef COIN_HAS_LAPACK
     ipfint N=ndim, NRHS=nrhs, LDA=lda, LDB=ldb, INFO;
     char uplo = 'L';
@@ -72,11 +80,14 @@ namespace SimTKIpopt
     std::string msg = "Ipopt has been compiled without LAPACK routine DPOTRS, but options are chosen that require this dependency.  Abort.";
     THROW_EXCEPTION(LAPACK_NOT_INCLUDED, msg);
 #endif
-
+#endif
   }
 
   void IpLapackDpotrf(Index ndim, Number *a, Index lda, Index& info)
   {
+#ifdef WASM_BUILD
+    throw std::runtime_error(std::string("SimTKIpopt::IpLapackDpotrf called"));
+#elif WASM_BUILD
 #ifdef COIN_HAS_LAPACK
     ipfint N=ndim, LDA=lda, INFO;
 
@@ -90,12 +101,15 @@ namespace SimTKIpopt
     std::string msg = "Ipopt has been compiled without LAPACK routine DPOTRF, but options are chosen that require this dependency.  Abort.";
     THROW_EXCEPTION(LAPACK_NOT_INCLUDED, msg);
 #endif
-
+#endif
   }
 
   void IpLapackDsyev(bool compute_eigenvectors, Index ndim, Number *a,
                      Index lda, Number *w, Index& info)
   {
+#ifdef WASM_BUILD
+    throw std::runtime_error(std::string("SimTKIpopt::IpLapackDsyev called"));
+#elif WASM_BUILD
 #ifdef COIN_HAS_LAPACK
     ipfint N=ndim, LDA=lda, INFO;
 
@@ -134,6 +148,6 @@ namespace SimTKIpopt
     std::string msg = "Ipopt has been compiled without LAPACK routine DSYEV, but options are chosen that require this dependency.  Abort.";
     THROW_EXCEPTION(LAPACK_NOT_INCLUDED, msg);
 #endif
-
+#endif
   }
 }

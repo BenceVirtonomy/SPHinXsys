@@ -2,6 +2,10 @@
 #include "IpLapackSolverInterface.hpp"
 #include "SimTKlapack.h"
 
+#define WASM_BUILD
+
+#ifndef WASM_BUILD
+
 #if SimTK_DEFAULT_PRECISION==1 // float
 #define DGELSD   sgelsd_
 #define DSYEV    ssyev_
@@ -13,6 +17,8 @@
 #define DGETRF   dgetrf_
 #define DGETRS   dgetrs_
 #endif
+
+#endif // WASM_BUILD
 
 namespace SimTKIpopt
 {
@@ -57,6 +63,11 @@ namespace SimTKIpopt
       Index nrhs, Number* rhs_vals, bool check_NegEVals,
       Index numberOfNegEVals)
   {
+#ifdef WASM_BUILD
+    throw std::runtime_error(std::string("LapackSolverInterface::MultiSolve called"));
+    ESymSolverStatus retval = SYMSOLVER_SUCCESS;
+    return retval;
+#elif WASM_BUILD
     int i;
     Number *atmp;
     DBG_START_METH("LapackSolverInterface::MultiSolve", dbg_verbosity);
@@ -125,7 +136,7 @@ namespace SimTKIpopt
       }
       delete [] atmp;
       return retval;
-
+#endif // WASM_BUILD
   }
 
 
@@ -162,6 +173,11 @@ namespace SimTKIpopt
   ESymSolverStatus LapackSolverInterface::Factorization(const Index* ia, const Index* ja,
       bool check_NegEVals, Index numberOfNegEVals)
   {
+#ifdef WASM_BUILD
+    throw std::runtime_error(std::string("LapackSolverInterface::Factorization called"));
+    ESymSolverStatus retval = SYMSOLVER_SUCCESS;
+    return retval;
+#elif WASM_BUILD
       DBG_START_METH("LapackSolverInterface::Factorization", dbg_verbosity);
       ESymSolverStatus retval = SYMSOLVER_SUCCESS;
       int info,lwork;
@@ -207,10 +223,16 @@ namespace SimTKIpopt
       }
 
       return retval;
+#endif // WASM_BUILD
   }
 
   ESymSolverStatus LapackSolverInterface::Solve(const Index* ia, const Index* ja, Index nrhs, Number *b)
   {
+#ifdef WASM_BUILD
+    throw std::runtime_error(std::string("LapackSolverInterface::Solve called"));
+    ESymSolverStatus retval = SYMSOLVER_SUCCESS;
+    return retval;
+#elif WASM_BUILD
     DBG_START_METH("LapackSolverInterface::Solve", dbg_verbosity);
     ESymSolverStatus retval = SYMSOLVER_SUCCESS;
     int info;
@@ -229,6 +251,7 @@ namespace SimTKIpopt
 
 
     return retval;
+#endif // WASM_BUILD
   }
 
   Index LapackSolverInterface::NumberOfNegEVals() const
