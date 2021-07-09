@@ -1,6 +1,9 @@
 [submodule "oneTBB"]
 	path = oneTBB
 	url = https://github.com/BenceVirtonomy/oneTBB
+[submodule "oneTBB-2019-wasm"]
+	path = oneTBB-2019-wasm
+	url = https://github.com/amkram/oneTBB-2019-wasm
 [submodule "SPHINXsys/src/shared/clapack_for_SPHinXsys"]
 	path = SPHINXsys/src/shared/clapack_for_SPHinXsys
 	url = https://github.com/BenceVirtonomy/clapack_for_SPHinXsys
